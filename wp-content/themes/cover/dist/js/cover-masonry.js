@@ -1,0 +1,1 @@
+jQuery(document).ready(function(){var a=jQuery(".site-main .grid");a.masonry({itemSelector:".hentry",columnWidth:".hentry",percentPosition:!0});jQuery(document.body).on("post-load",function(){var b=jQuery(".infinite-wrap").find(".hentry");a.append(b).masonry("appended",b)})});

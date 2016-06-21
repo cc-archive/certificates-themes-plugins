@@ -1,0 +1,90 @@
+/*
+Theme Name: 	CC Get Certified
+Theme URI: 		http:/certifications.creativecommons.org
+Description: 	CC Certification project site, a loving child theme of Cover
+Version: 		0.32
+Template:       cover
+Author: 		CogDog
+Author URI: 	http://cog.dog/
+Tags: custom-background, custom-colors, custom-menu, featured-images, one-column, sticky-post, theme-options
+License: GNU General Public License v2 or later
+
+*/
+
+@import url("../cover/style.css");
+
+
+/* gravity form video gallery  --------------------------------------------------------------------------- */ 
+body.gallery_page {
+	background-color:#000!important;
+}
+
+.gallery_page .site-main .grid .hentry {
+	padding: 30px 0 0;
+	margin-bottom: 60px;
+}
+
+.gallery_page .entry-summary {
+    background-color: #000;
+}
+
+.gallery_page  .entry-title {
+	margin:0;
+}
+
+.entry-content.gallery-text > p {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+
+.gallery_page .entry-summary > * {
+    width: 100%;
+}
+
+.gallery_page iframe {
+	height: 360px;
+	
+}
+
+ 
+/* header  --------------------------------------------------------------------------- */ 
+.custom-logo {
+    height: 40px;
+    margin-top: 8px;
+}
+
+
+/* front or archive  ------------------------------------------------------------------ */
+
+
+#posts .entry-summary p {
+    line-height: 1.5;
+}
+
+#posts h1 .entry-title {
+    line-height: 1.2;
+}
+
+
+
+/* single   --------------------------------000000000---------------------------------- */
+.entry-content > p:first-child, .entry-content > p:first-of-type, .entry-content > p:first-child:empty + p, .entry-content > p:first-of-type:empty + p, .entry-content p.lead {
+    font-size: 1.8rem;
+    margin-bottom: 3em;
+}
+
+.entry-content > .gform_wrapper, .entry-content > .gforms_confirmation_message {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 760px;
+    width: 90%;
+}
+
+.wp-caption .wp-caption-text {
+    line-height: 1.2;
+}
+
+.entry-content > p, .entry-content > ul, .entry-content > ol, .entry-content > blockquote {
+    font-size: 1.2rem;
+}
