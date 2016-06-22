@@ -88,7 +88,11 @@ $random_finds = array_rand( $finds , $items_per_row * $rows_to_show  );
 			
 						<?php 
 							foreach ( $finds as $item ) {
-								echo '<li><a href="' . $item['url'] . '" target="_blank">' . $item['name'] . '</a> &bull; ' . $item['loc'] . ' &bull; Certificaton Interest: CC-' . strtoupper( $item['interest'] ) . '</li>';
+							
+								// enable class if link is YouTube or vimeo, otherwise spawn new window
+								$lightbox_class = ( is_embed_video( $item['url'] ) ) ? 'rel="wp-video-lightbox" ' : ' target="_blank"';
+								
+								echo '<li><a href="' . $item['url'] . '" ' . $lightbox_class . '>' . $item['name'] . '</a> &bull; ' . $item['loc'] . ' &bull; Certificaton Interest: CC-' . strtoupper( $item['interest'] ) . '</li>';
 							}
 						?>
 						</ol>		

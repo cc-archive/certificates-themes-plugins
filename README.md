@@ -12,3 +12,4 @@ Child theme based on [Cover](http://eichefam.net/projects/cover)
 * easy-theme-and-plugin-upgrades
 * gravityforms
 * jetpack
+* wp-video-lightbox
