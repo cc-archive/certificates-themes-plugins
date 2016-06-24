@@ -37,7 +37,11 @@ foreach ( $gf_results as $item) {
 		);
 }
 
+// pull out a selection of videos to embed, specified by the numbers of rows, eyc
 $random_finds = array_rand( $finds , $items_per_row * $rows_to_show  );
+
+// mix it up, baby!
+shuffle($random_finds);
 
 ?>
 

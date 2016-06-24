@@ -2,7 +2,7 @@
 Theme Name: 	CC Get Certified
 Theme URI: 		http:/certifications.creativecommons.org
 Description: 	CC Certification project site, a loving child theme of Cover
-Version: 		0.32
+Version: 		0.35
 Template:       cover
 Author: 		CogDog
 Author URI: 	http://cog.dog/
@@ -30,6 +30,12 @@ body.gallery_page {
 
 .gallery_page  .entry-title {
 	margin:0;
+	font-size: 1.4rem;
+}
+
+.gallery_page  .entry-subtitle {
+    font-size: 1.15rem;
+    line-height: 1.2;
 }
 
 .entry-content.gallery-text > p {
@@ -46,7 +52,17 @@ body.gallery_page {
 	height: 360px;
 	
 }
-
+    
+/* buttons  --------------------------------------------------------------------------- */ 
+.button.cc {
+  background-color: #ee5b32;
+}
+.button.cc:hover {
+  background-color: #b94727;
+}
+.button.cc:active {
+  background-color: #a33e22;
+}
  
 /* header  --------------------------------------------------------------------------- */ 
 .custom-logo {
@@ -54,6 +70,14 @@ body.gallery_page {
     margin-top: 8px;
 }
 
+.header .site-nav a {
+    margin-right: 5px;
+}
+
+.morestuff {
+    font-size: 0.5em;
+    vertical-align: text-top;
+}
 
 /* front or archive  ------------------------------------------------------------------ */
 
