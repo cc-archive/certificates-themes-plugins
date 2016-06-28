@@ -5,7 +5,7 @@ blame Alan Levine • @cogdog • http://cog.dog
 
 Plugins and themes used for the new Wordpress site https://certificates.creativecommons.org/ 
 
-[CC-Cert Child Theme](wp-content/themes/cc-cert) based on [Cover](http://eichefam.net/projects/cover) 
+[CC-Cert Child Theme](wp-content/themes/cc-cert) version 0.361 based on [Cover](http://eichefam.net/projects/cover) 
 
 ## Plugins
 * [Auto Post Thumbnail](https://wordpress.org/plugins/auto-post-thumbnail/) generate featured image from first found in post if not specified by author
@@ -13,4 +13,5 @@ Plugins and themes used for the new Wordpress site https://certificates.creative
 * [Flickr Justified Gallery](https://wordpress.org/plugins/flickr-justified-gallery/)  beautiful galleries from flickr user, set, groups
 * [Gravity Forms](http://www.gravityforms.com) $ everything and anything for forms that work with Wordpress content
 * [Jetpack](https://wordpress.org/plugins/jetpack/) combo tool, the Cover theme uses several modules like infinite scroll, etc.
+* [Pagelist](https://wordpress.org/plugins/page-list/) dynamically creates lists of pags, subpages based on parent-child relationships
 * [WP Video Lightbox](https://wordpress.org/plugins/wp-video-lightbox/) shows web video in overlay

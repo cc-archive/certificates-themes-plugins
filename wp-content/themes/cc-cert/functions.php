@@ -34,4 +34,22 @@ function is_embed_video ($url) {
 
 }
 
+/* ----- shortcode to generate the navigation links for the draft certification pages -------- */
+add_shortcode("objnav", "cc_cert_rbox");  
+
+function cc_cert_rbox ( $atts ) {  
+
+	// generates output for the objective sidebat
+ 	extract( shortcode_atts( array( "title" => 'Navigation',  "type" => 'objective' ), $atts ) );  
+ 	
+ 	// for objective pages, we want to do the shortcode for siblings; if it is "module" then do subpages
+ 	$linklist = ( $type == 'objective' ) ? do_shortcode( '[siblings]') : do_shortcode( '[subpages]');
+ 	
+ 	// go dog go
+ 	return '<div id="rbox"><h3>' . $title . '</h3>' . $linklist . '</div>';
+ }
+
+
+
+
 ?>

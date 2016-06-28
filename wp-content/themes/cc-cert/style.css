@@ -2,7 +2,7 @@
 Theme Name: 	CC Get Certified
 Theme URI: 		http:/certifications.creativecommons.org
 Description: 	CC Certification project site, a loving child theme of Cover
-Version: 		0.35
+Version: 		0.361
 Template:       cover
 Author: 		CogDog
 Author URI: 	http://cog.dog/
@@ -11,6 +11,7 @@ License: GNU General Public License v2 or later
 
 */
 
+/* hello parent */
 @import url("../cover/style.css");
 
 
@@ -111,4 +112,65 @@ body.gallery_page {
 
 .entry-content > p, .entry-content > ul, .entry-content > ol, .entry-content > blockquote {
     font-size: 1.2rem;
+}
+
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    font-size: 0.9rem;
+    line-height: normal;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1400px;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+.topnav .current_page_item > a {
+    font-weight: bold;
+    background-color: #ee5b32;
+}
+
+.page-list .current_page_item > a {
+	pointer-events: none;
+    cursor: default;
+}
+       
+ul.topnav li a.active {background-color: #ee5b32;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right,
+    ul.topnav li {float: none;}
+}
+
+
+/* right side box   --------------------------------000000000--------------------------- */
+#rbox {
+    float: right;
+    margin: 10px 3%;
+    width: 30%;
+    background-color: #eee;
+    border-radius: 18px;
+    padding: 10px 20px;
+}
+
+#rbox li {
+    line-height: normal;
 }
