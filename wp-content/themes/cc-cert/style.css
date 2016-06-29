@@ -15,7 +15,7 @@ License: GNU General Public License v2 or later
 @import url("../cover/style.css");
 
 
-/* gravity form video gallery  --------------------------------------------------------------------------- */ 
+/* gravity form video gallery  -------------------------------------------------------- */ 
 body.gallery_page {
 	background-color:#000!important;
 }
@@ -93,7 +93,7 @@ body.gallery_page {
 
 
 
-/* single   --------------------------------000000000---------------------------------- */
+/* single   --------------------------------------------------------------------------- */
 .entry-content > p:first-child, .entry-content > p:first-of-type, .entry-content > p:first-child:empty + p, .entry-content > p:first-of-type:empty + p, .entry-content p.lead {
     font-size: 1.8rem;
     margin-bottom: 3em;
@@ -114,6 +114,28 @@ body.gallery_page {
     font-size: 1.2rem;
 }
 
+/* cc configurator block   ------------------------------------------------------------ */
+
+.cc-block {
+    margin: 6em auto!important;
+    padding: 1em!important;
+    font-size: 0.9em!important;
+    line-height: 1.2;
+}
+
+/* certification map pages   ----------------------------------------------------------- */
+#rbox {
+    float: right;
+    margin: 10px 3%;
+    width: 30%;
+    background-color: #eee;
+    border-radius: 18px;
+    padding: 10px 20px;
+}
+
+#rbox li {
+    line-height: normal;
+}
 
 ul.topnav {
     list-style-type: none;
@@ -158,19 +180,4 @@ ul.topnav li.right {float: right;}
 @media screen and (max-width: 600px){
     ul.topnav li.right,
     ul.topnav li {float: none;}
-}
-
-
-/* right side box   --------------------------------000000000--------------------------- */
-#rbox {
-    float: right;
-    margin: 10px 3%;
-    width: 30%;
-    background-color: #eee;
-    border-radius: 18px;
-    padding: 10px 20px;
-}
-
-#rbox li {
-    line-height: normal;
 }
