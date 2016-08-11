@@ -48,8 +48,5 @@ function cc_cert_rbox ( $atts ) {
  	// go dog go
  	return '<div id="rbox"><h3>' . $title . '</h3>' . $linklist . '</div>';
  }
-
-
-
-
+ 
 ?>
