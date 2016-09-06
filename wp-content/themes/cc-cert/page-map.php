@@ -18,7 +18,7 @@ $parents = get_post_ancestors( $post->ID );
 /* Get the top Level page->ID count base 1, array base 0 so -1 */ 
 
 if ($parents) {
-	$id = $parents[count($parents)-1];
+	$id = $parents[0];
 } else {
 	$id =  $post->ID;
 }
@@ -29,7 +29,7 @@ $module_param = '&amp;module=' .  get_the_title();
 $parent = get_post( $id );
 
 // set the certification
-$certification = $parent->post_name;
+$certification = ucfirst($parent->post_name);
 
 
 
