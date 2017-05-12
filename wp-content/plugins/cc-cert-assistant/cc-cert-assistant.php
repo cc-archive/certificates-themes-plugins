@@ -523,10 +523,10 @@ function cc_cert_converter_cleaner( $post_id ) {
 		// ---- h/t http://dobsondev.com/2015/04/03/api-calls-with-curl/
 		$curl = curl_init();
 		
-		// authentication hardwired now, needs to be theme option.
+		// authentication hardwired now, needs to be theme option. Removed for GitHub posting
 		
-		$cuser = 'cogdog';
-		$ctoken = 'bc69b41d5fd59741a8b4b8c2908815952db44f4a';
+		$cuser = '';
+		$ctoken = '';
 						
 		// set up for curling for content
 		curl_setopt_array( $curl, array(
