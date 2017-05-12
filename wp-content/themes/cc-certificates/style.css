@@ -1,8 +1,8 @@
 /*
-Theme Name: 	CC Get Certified 
-Theme URI: 		http:/certifications.creativecommons.org
-Description: 	CC Certification project site, a loving child theme of Cover
-Version: 		0.61
+Theme Name: 	CC Certificates
+Theme URI: 		http:/certifications.creativecommons.org/
+Description: 	CC Certification Public site theme based on Cover
+Version: 		0.65
 Template:       cover
 Author: 		CogDog
 Author URI: 	http://cog.dog/
@@ -13,47 +13,7 @@ License: GNU General Public License v2 or later
 
 /* hello parent */
 @import url("../cover/style.css");
-
-
-/* gravity form video gallery  -------------------------------------------------------- */ 
-body.gallery_page {
-	background-color:#000!important;
-}
-
-.gallery_page .site-main .grid .hentry {
-	padding: 30px 0 0;
-	margin-bottom: 60px;
-}
-
-.gallery_page .entry-summary {
-    background-color: #000;
-}
-
-.gallery_page  .entry-title {
-	margin:0;
-	font-size: 1.4rem;
-}
-
-.gallery_page  .entry-subtitle {
-    font-size: 1.15rem;
-    line-height: 1.2;
-}
-
-.entry-content.gallery-text > p {
-    color: #fff;
-    font-size: 1.2rem;
-    margin-bottom: 0;
-}
-
-.gallery_page .entry-summary > * {
-    width: 100%;
-}
-
-.gallery_page iframe {
-	height: 360px;
-	
-}
-    
+  
 /* buttons  --------------------------------------------------------------------------- */ 
 .button.cc {
   background-color: #ee5b32;
@@ -114,7 +74,7 @@ body.gallery_page {
     margin-bottom: 3em;
 }
 
-.entry-content > .gform_wrapper, .entry-content > .gforms_confirmation_message, .entry-content > .ccolumn, .page-list,  #cc_cert_footer  {
+.entry-content > .gform_wrapper, .entry-content > .gforms_confirmation_message, .entry-content > .ccolumn, .page-list,   #cc_cert_footer  {
     margin-left: auto;
     margin-right: auto;
     max-width: 760px;
@@ -129,40 +89,19 @@ body.gallery_page {
     font-size: 1.2rem;
 }
 
-/* cc grid-4  ------------------------------------------------------------------------ */
-
-
-.site-main .card-4 .entry-featured-image {
-	margin-top:0;
-	margin-bottom:0;
+/* callout   --------------------------------------------------------------------------- */
+.entry-content h5 + p {
+    margin-top: 0;
+    line-height: 1.1;
+    background-color: #ededed;
+    padding: 1rem 2rem;
 }
 
-.site-main .card-4 .entry-header {
-	text-align:center;
-}
-		
-.site-main .grid.card-4 {
-  max-width: 100%;
-}
 
-.site-main .grid.card-4 .hentry {
-  margin-left: 1%;
-  margin-right: 1%;
-  width: 23%;
+.entry-content h5 {
+    font-size: 1.3rem;
+    background-color: #333;
+    color: #ddd;
+    padding: 0.5rem 2rem;
 }
-@media screen and (max-width: 768px) {
-  .site-main .grid.card-4 .hentry {
-    margin-left: 1%;
-    margin-right: 1%;
-    width: 48%;
-  }
-}
-@media screen and (max-width: 480px) {
-  .site-main .grid.card-4 .hentry {
-    margin-left: 0;
-    margin-right: 0;
-    width: 100%;
-  }
-}
-
 

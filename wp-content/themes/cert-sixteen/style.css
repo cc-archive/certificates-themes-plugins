@@ -1,0 +1,23 @@
+/*
+Theme Name: 	CC Certificates Sixteen
+Theme URI: 		http:/certifications.creativecommons.org/
+Description: 	CC Certification Public site theme based on Twenty Sixteen
+Version: 		0.01
+Template:       twentysixteen
+Author: 		CogDog
+Author URI: 	http://cog.dog/
+
+License: GNU General Public License v2 or later
+
+*/
+
+/* hello parent */
+@import url("../twentysixteen/style.css");
+
+.full-content {
+	width: 100%;
+}
+  
+
+
+
