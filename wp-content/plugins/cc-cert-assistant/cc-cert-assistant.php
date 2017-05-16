@@ -10,9 +10,9 @@
  *
  * @wordpress-plugin
  * Plugin Name:       Creative Commons  Certification Assistant
- * Plugin URI:        http://github.com/creativeommons/cc-cert-assistant
+ * Plugin URI:        https://github.com/creativecommons/certificates-themes-plugins/
  * Description:       This plugin adds functionality such as navigation and post-processing for GitHub / markkdown source material for sites showing the Creative Commons Certification.
- * Version:           1.6.2
+ * Version:           1.7.0
  * Author:            Alan Levine
  * Author URI:        http://cog.dog/
  * License:           GPL-2.0+
@@ -523,10 +523,10 @@ function cc_cert_converter_cleaner( $post_id ) {
 		// ---- h/t http://dobsondev.com/2015/04/03/api-calls-with-curl/
 		$curl = curl_init();
 		
-		// authentication hardwired now, needs to be theme option. Removed for GitHub posting
+		// authentication hardwired now, needs to be theme option.
 		
-		$cuser = '';
-		$ctoken = '';
+		$cuser = 'cogdog';
+		$ctoken = 'aa8ce8944e78a17a9a46e68130e7ef5cec1416e7';
 						
 		// set up for curling for content
 		curl_setopt_array( $curl, array(
@@ -592,31 +592,21 @@ function cc_cert_converter_cleaner( $post_id ) {
 	// remove first line if it has a header tag
 	if ( substr($content, 0, 1) == "#") $content = cc_cert_converter_stripFirstLine( $content );
 
-	// replace local links in markdown tp work as sub page links in WP
-	$content = str_replace ( '/index.md', '/', $content);
-	$content = str_replace ( '.md', '/', $content);
+	// replace local links to markdown URLs to work as WP page URLs
+	$content = str_replace ( '/index.md)', '/)', $content);
+	$content = str_replace ( '.md)', '/)', $content);
 		
-	// URLs to GH hosted images, first URLs are the needle, second is replace
-	// cant grep for my life 
-	// When I grow up tp ne a real plugin, these will be user options.
+	// Convert the image URLs from Github references to the published pages verson ones, e.g.
+	// change 'https://github.com/creativecommons/cc-cert-core/blob/master/images/copyright/voyage-dans-la-lune.jpg' to 
+	// 'https://creativecommons.github.io/cc-cert-core/images/copyright/voyage-dans-la-lune.jpg'
 
-	// all the repos
-	$certs = ['core', 'lib', 'edu', 'gov'];
+	$content = preg_replace('~https://\Kgithub.com/([a-zA-Z0-9-]+)(/[a-zA-Z0-9-]+)/blob/master(?=/images/)~',  '\1.github.io\2', $content);
 
-	for ($i = 0; $i < count ( $certs ); $i++ ) {
-		// replace all URLs for the repo image with one for GH pages (so we can display)
-		$content = str_replace ( 'https://github.com/creativecommons/cc-cert-' . $certs[$i] . '/blob/master/images', 'https://creativecommons.github.io/cc-cert-' . $certs[$i] . '/images' , $content);
-	}
-
-	// this aint working
-
-	// $replace = preg_replace('\'https://github.com/([a-zA-Z0-9\\-]+)/([a-zA-Z0-9\\-]+)/blob/master/images\'',  'https://\\1.github.io/\\2/images', $content, -1, $rcount);
-
-
-	// for the main cert contents page, replace list structure with pagelist shortcode
+	// for the main cert contents page, replace list structure with PaheList shortcode so it builds an index
+	// based on th Wordpress Page structure
 	if ( $cert_meta['page'] == 'index' and basename( get_permalink() ) == 'contents' ) $content = contents_pagelist(  $content );
 
-	// for module page replace ordered lists with the current sububpages
+	// for module pages replace ordered lists with the current subpages
 	if ( $cert_meta['page'] == 'module' ) $content = module_pagelist(  $content );
 	
 	// for the summit quest, replace list structure with pagelist shortcode
