@@ -525,8 +525,8 @@ function cc_cert_converter_cleaner( $post_id ) {
 		
 		// authentication hardwired now, needs to be theme option.
 		
-		$cuser = 'cogdog';
-		$ctoken = 'aa8ce8944e78a17a9a46e68130e7ef5cec1416e7';
+		$cuser = '<user>';
+		$ctoken = '<token>';
 						
 		// set up for curling for content
 		curl_setopt_array( $curl, array(
