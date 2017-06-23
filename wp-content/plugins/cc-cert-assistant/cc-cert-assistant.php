@@ -12,7 +12,7 @@
  * Plugin Name:       Creative Commons  Certification Assistant
  * Plugin URI:        https://github.com/creativecommons/certificates-themes-plugins/
  * Description:       This plugin adds functionality such as navigation and post-processing for GitHub / markkdown source material for sites showing the Creative Commons Certification.
- * Version:           1.7.0
+ * Version:           1.7.5
  * Author:            Alan Levine
  * Author URI:        http://cog.dog/
  * License:           GPL-2.0+
@@ -25,7 +25,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define('cc_cert_assistant_PLUGIN_VERSION', '1.62');
+define('cc_cert_assistant_PLUGIN_VERSION', '1.7.5');
 
 
 // -- default style sheet (should be eventually a plugin option)
@@ -233,6 +233,7 @@ if ( !function_exists('cc_cert_assistant_content_filter') ) {
 					case 'unit': 
 						// set up shortcode stuff to add navigation stuff to units, based on parent structure
 
+						$root_id = cc_cert_assistant_get_top_parent($post->ID);
 						$parent_id = wp_get_post_parent_id( get_the_ID() ); // this should be the module for this unit
 
 						$grandparent_id = wp_get_post_parent_id( $parent_id ); // this should be the content page id
@@ -244,7 +245,7 @@ if ( !function_exists('cc_cert_assistant_content_filter') ) {
 							$topnav = do_shortcode('[pagelist include="' . $grandparent_id . '" number="1" class="topnav"]');
 						}	
 			
-						$content = $topnav .  cc_cert_assistant_get_navbox( get_the_title( $grandparent_id ), 'unit', get_the_title( $parent_id ), $grandparent_id ) . $content .  $the_footer;	
+						$content = $topnav .  cc_cert_assistant_get_navbox(  get_the_title( $root_id ), 'unit', get_the_title( $parent_id ), $grandparent_id ) . $content .  $the_footer;	
 						
 						// add feedback format form for core only (temp)
 						
@@ -525,8 +526,8 @@ function cc_cert_converter_cleaner( $post_id ) {
 		
 		// authentication hardwired now, needs to be theme option.
 		
-		$cuser = '<user>';
-		$ctoken = '<token>';
+		$cuser = '';
+		$ctoken = '';
 						
 		// set up for curling for content
 		curl_setopt_array( $curl, array(
